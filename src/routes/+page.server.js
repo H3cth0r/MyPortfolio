@@ -1,6 +1,8 @@
   import { getMyWorkData } from '$lib/server/database.js';
 
 export const load = () => {
-  return getMyWorkData();
+  let resultData = getMyWorkData();
+  console.log(resultData);
+  return resultData;
 }
 
