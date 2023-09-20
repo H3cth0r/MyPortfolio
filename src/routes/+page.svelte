@@ -1,5 +1,5 @@
 <script>
-/** @type {import('./$types').LayoutData} */
+  /** @type {import('./$types').PageData} */
   export let data;
 
   import "../app.css";
