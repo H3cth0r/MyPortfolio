@@ -1,18 +1,41 @@
 import { db } from "../../firebase.server.js";
 import { getDatabase, onValue, ref } from "firebase/database";
-export const getMyWorkData = () => {
+
+// export async const getMyWorkData = async () => {
+//     const query = ref(db, "mywork");
+//     let result = [];
+//     onValue(query, (snapshot) => {
+//       result = Object.values(snapshot.val());
+//     });
+//   return {mywork_data: result};
+// }
+export const getMyWorkData = async () => {
+  return new Promise((resolve, reject) => {
     const query = ref(db, "mywork");
-    let result = [];
     onValue(query, (snapshot) => {
-      result = Object.values(snapshot.val());
+      const result = Object.values(snapshot.val());
+      resolve({ mywork_data: result});
+    }, (error) => {
+      reject(error);
     });
-  return {mywork_data: result};
+  });
 }
-export const getBlogById = ( {postId} ) => {
-    let result = "None";
-    const query = ref(db, `blogging/${postId}`); 
+export const getBlogById = async ({ postId }) => {
+  return new Promise((resolve, reject) => {
+    const query = ref(db, `blogging/${postId}`);
     onValue(query, (snapshot) => {
-      result = snapshot.val();
+      const result = snapshot.val();
+      resolve({ blog_data: result });
+    }, (error) => {
+      reject(error);
     });
-    return {blog_data: result};
+  });
 }
+// export async const getBlogById = ( {postId} ) => {
+//     let result = "None";
+//     const query = ref(db, `blogging/${postId}`); 
+//     onValue(query, (snapshot) => {
+//       result = snapshot.val();
+//     });
+//     return {blog_data: result};
+// }
