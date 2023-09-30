@@ -41,4 +41,19 @@
   .info-description {
     font-size: 16px;
   }
+  @media (max-width:500px){
+    .info-container{
+      width: 90vw;
+    }
+  }
+  @media (max-height: 900px) {
+    .info-container{
+      height: 50%;
+    }
+  }
+  @media (max-height: 700px) {
+    .info-container{
+      height: 70%;
+    }
+  }
 </style>

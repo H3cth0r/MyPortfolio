@@ -33,18 +33,20 @@
   .main-container 
   {
     width: 100%;
-    height: 25vh;
+    min-height: 25vh;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid black;
+    justify-content: center;
   }
   .main-container-no-button
   {
     width: 100%;
-    height: 20vh;
+    min-height: 25vh;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid black;
+    justify-content: center;
   }
   .info-container
   {
@@ -61,14 +63,15 @@
   .button-container
   {
     display: flex;
-    align-items: end;
     justify-content: end;
-    height: 30%;
+    align-items: end;
+    height: 10vh;
   }
   .button-link
   {
     font-family: "Times New Roman", Times, serif;
-    width: 13%;
+    width: 95px;
+    height: 38px;
     background-color: transparent;
     border: 1px solid black;
     color: black;
@@ -90,5 +93,16 @@
   .button-link:hover p
   {
     color: white;
+  }
+
+  @media (max-width: 400px) {
+    .main-container 
+    {
+      min-height: 40vh;
+    }
+    .main-container-no-button
+    {
+      min-height: 35vh;
+    }
   }
 </style>

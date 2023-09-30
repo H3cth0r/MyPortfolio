@@ -29,14 +29,18 @@
 <style>
   .my-work-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
   }
   .center-holder-white {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100vh;
+    justify-content: space-between;
     width: 80%;
+    z-index: 10;
     max-width: 800px;
   }
   .section-title

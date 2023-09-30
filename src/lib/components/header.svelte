@@ -48,4 +48,10 @@
     width: 80%;
     height: 100vh;
   }
+
+  @media (max-width:500px){
+    .center-holder{
+      width: 90%;
+    }
+  }
 </style>
