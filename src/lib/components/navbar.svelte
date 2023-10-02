@@ -40,7 +40,8 @@
 <div class="menu-container navbar-item">
     <div class="center-menu-box-container">
         <div class="menu-box-container">
-
+          <div class="menu-box-inner-container">
+          </div>
         </div> 
     </div>
 </div>
@@ -104,12 +105,20 @@
   .menu-box-container {
     pointer-events: auto;
     height: 100%;
-    width: 35%;
+    width: 60%;
     background-color: white;
     border-radius: 7px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     box-shadow:
     rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+  }
+  .menu-box-inner-container {
+    width: 80%;
+    height: 80%;
+    background-color: green;
   }
 </style>

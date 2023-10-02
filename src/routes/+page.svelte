@@ -25,6 +25,26 @@
     {/each}
   </div>
 </div>
+<div class="my-work-container">
+  <div class="center-holder-white-center">
+    <div class="section-title">
+      <p>Check This Tracks</p>
+    </div>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/6hlsJJQkNzxBWqwrTSz3xG?utm_source=generator&theme=0" 
+            width="100%" 
+            height="360" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; 
+            clipboard-write; 
+            encrypted-media; 
+            fullscreen; 
+            picture-in-picture" 
+            loading="lazy">
+    </iframe>
+  </div>
+</div>
 
 <style>
   .my-work-container {
@@ -39,6 +59,15 @@
     justify-content: center;
     min-height: 100vh;
     justify-content: space-between;
+    width: 80%;
+    z-index: 10;
+    max-width: 800px;
+  }
+  .center-holder-white-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
     width: 80%;
     z-index: 10;
     max-width: 800px;
