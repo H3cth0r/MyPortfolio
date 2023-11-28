@@ -3,6 +3,7 @@
   import SandwichIcon from "$lib/assets/swMenu.png";
   import LogoIconBlue from "$lib/assets/doodle-logo-blue.png";
   import SandwichIconBlue from "$lib/assets/swMenu-blue.png";
+  import { ButtonLink } from "$lib/components";
   import { page } from '$app/stores';
 
   let active_menu = false;
@@ -27,25 +28,19 @@
 <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
 
 
-<div class="navbar navbar-item">
+<div class={blueLogo ? "navbar-down navbar-item" : "navbar navbar-item"}>
   <div class="buttons-container">
     <img class="logo-button" src={blueLogo ? LogoIconBlue:LogoIcon }/>
-    <button class="image-button" on:click={handleOpenMenu}>
-      <img class="menu-button" src={blueLogo ? SandwichIconBlue : SandwichIcon}>
-    </button>
+    <div class="menu-horizontal">
+      <ul class="menu-horizontal-list">
+        <ButtonLink label_txt={'Blogging'} label_color={blueLogo ? '#004BC3' : 'white' }/>
+        <ButtonLink label_txt={'Gallery'} label_color={blueLogo ? '#004BC3' : 'white' }/>
+        <ButtonLink label_txt={'Login'} label_color={blueLogo ? '#004BC3' : 'white' }/>
+      </ul>
+    </div>
   </div>
 </div>
 
-{#if active_menu}
-<div class="menu-container navbar-item">
-    <div class="center-menu-box-container">
-        <div class="menu-box-container">
-          <div class="menu-box-inner-container">
-          </div>
-        </div> 
-    </div>
-</div>
-{/if}
 
 <style>
   .navbar-item {
@@ -61,15 +56,42 @@
     width: 100vw;
     height: 8vh;
   }
+  .navbar-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: white;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 8vh;
+  }
   .buttons-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 80%;
+    height: 100%;
   }
   .logo-button {
     width: 100px;
-    height: auto;
+    height: 20px;
+  }
+  .menu-horizontal{
+    width: 30%;
+    height: 100%;
+    display: flex;
+  }
+  .menu-horizontal-list{
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .menu-button {
     width: 60px;
