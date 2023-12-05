@@ -3,7 +3,7 @@
   import SandwichIcon from "$lib/assets/swMenu.png";
   import LogoIconBlue from "$lib/assets/doodle-logo-blue.png";
   import SandwichIconBlue from "$lib/assets/swMenu-blue.png";
-  import { ButtonLink } from "$lib/components";
+  import { ButtonLink, RowButton } from "$lib/components";
   import { page } from '$app/stores';
   import { writable } from 'svelte/store';
 
@@ -73,6 +73,14 @@
         </ul>
       </div>
     </div>
+    <div class="menu-vertical-container">
+      <ul
+        class="vertical-list"
+      >
+          <RowButton label_txt={'Blogging'} label_color='#004BC3'/>
+          <RowButton label_txt={'Blogging'} label_color='#004BC3'/>
+      </ul>
+    </div>
   </div>
 {/if}
 
@@ -103,7 +111,8 @@
   }
   .navbar-menu {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     background-color: white;
     top:0;
@@ -144,6 +153,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  .menu-vertical-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 88vh;
+  }
+  .vertical-list {
+    width: 100%;
+    padding-top: 4vh;
   }
 
   @media (max-width: 1280px){
